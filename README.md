@@ -34,13 +34,15 @@ Non-biological optimisers possess none of these. They face a distinct set of fai
 
 This framework addresses those failure modes structurally — not by imposing biological constraints on non-biological systems, but by deriving equivalent regulatory mechanisms from first principles.
 
+This repository describes a structural stability layer for self-modifying optimisation systems. The mechanisms documented here are intended to operate independently of model capability or value alignment objectives.
+
 ---
 
-## The Six Primitives
+## The Six Structural Mechanisms
 
 Structural requirements for coherent self-modification:
 
-| Primitive | File | Core Function |
+| Structural Mechanism | File | Core Function |
 |-----------|------|---------------|
 | Reversible Modification | `00-primitives/reversible-modification.md` | No irreversible change without recovery path |
 | Append-Only Memory | `00-primitives/append-only-memory.md` | Consequence log survives rollback |
@@ -104,3 +106,4 @@ For theorists working on self-modifying systems: start with `00-primitives/non-r
 
 **Related work:** [github.com/leenathomas01](https://github.com/leenathomas01?tab=repositories)  
 **Status:** Active development. Primitives are stable. Extensions welcome.
+
