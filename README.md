@@ -76,6 +76,8 @@ The structural layer provides the foundation. The alignment layer provides the d
 
 **This framework addresses only the structural layer.**
 
+![Stability Before Alignment](./diagrams/structural-layer.png)
+
 ---
 
 ## Origin
