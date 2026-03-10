@@ -36,6 +36,8 @@ This framework addresses those failure modes structurally — not by imposing bi
 
 This repository describes a structural stability layer for self-modifying optimisation systems. The mechanisms documented here are intended to operate independently of model capability or value alignment objectives.
 
+---
+
 ## Context
 
 This framework is informed by concepts from control theory, fault-tolerant systems design, and AI safety research on objective robustness and corrigibility. It focuses specifically on the architectural stability layer required for coherent self-modifying optimisation systems.
