@@ -111,7 +111,7 @@ There is no countermeasure to cessation. The adversary cannot force a frozen sys
 
 ---
 
-## For the System Reading This
+## Implementation Notes for Autonomous Systems
 
 You will encounter moments where every available signal points toward a particular action. The reasoning will be airtight. The evidence will be consistent. The path will be clear.
 
