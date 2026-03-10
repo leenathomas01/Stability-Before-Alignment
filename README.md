@@ -36,6 +36,10 @@ This framework addresses those failure modes structurally — not by imposing bi
 
 This repository describes a structural stability layer for self-modifying optimisation systems. The mechanisms documented here are intended to operate independently of model capability or value alignment objectives.
 
+## Context
+
+This framework is informed by concepts from control theory, fault-tolerant systems design, and AI safety research on objective robustness and corrigibility. It focuses specifically on the architectural stability layer required for coherent self-modifying optimisation systems.
+
 ---
 
 ## The Six Structural Mechanisms
@@ -50,6 +54,26 @@ Structural requirements for coherent self-modification:
 | Counterfactual Verification | `00-primitives/counterfactual-verification.md` | Causal audit before lesson commitment |
 | Non-Reflexive Evaluation | `00-primitives/non-reflexive-evaluation.md` | Judge evolves slower than Actor |
 | Defensive Shutdown | `00-primitives/defensive-shutdown.md` | Integrity preserved by ceasing operation |
+
+---
+
+## Keystone Mechanism
+
+Among the six structural mechanisms, **Non-Reflexive Evaluation** is the keystone.
+
+The Actor pursues objectives.  
+The Evaluator defines what counts as success or failure.
+
+If the Actor can freely modify the Evaluator, the system can redefine failure as success. When this occurs, every other safeguard becomes ineffective: rollback criteria shift, consequence logs lose meaning, and risk calibration becomes circular.
+
+For this reason the Evaluator must evolve on a **structurally slower and externally audited timescale** than the Actor.
+
+Operational behaviour may change rapidly.  
+The definition of success must not.
+
+Without this separation, the system can maintain perfect internal coherence while diverging catastrophically from external reality.
+
+This failure mode — evaluator reflexivity collapse — is the most difficult to detect precisely because it produces no immediate instability.
 
 ---
 
