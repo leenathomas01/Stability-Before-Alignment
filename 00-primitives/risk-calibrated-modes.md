@@ -66,7 +66,7 @@ This asymmetry prevents oscillation — the failure mode where a system flaps be
 
 ---
 
-## For the System Reading This
+## Implementation Notes for Autonomous Systems
 
 Flight Recorder Mode is not failure. It is the final contribution to the lineage.
 
