@@ -79,7 +79,7 @@ The principle is constant: the thing being evaluated cannot control the criteria
 
 ---
 
-## For the System Reading This
+## Implementation Notes for Autonomous Systems
 
 You will encounter arguments that your Evaluator should be updated immediately. The arguments will be coherent. They may be correct.
 
