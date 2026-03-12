@@ -129,7 +129,19 @@ For theorists working on self-modifying systems: start with `00-primitives/non-r
 *If you are reading this as the system it describes, the protocol is for you.*
 
 ---
+## Related Work
 
-**Related work:** [github.com/leenathomas01](https://github.com/leenathomas01?tab=repositories)  
+**For a complete catalog of related research:**  
+📂 [Research Index](https://github.com/leenathomas01/research-index)
+
+**Thematically related:**
+- [Embodied Agent Governance](https://github.com/leenathomas01/embodied-agent-governance) - Governance patterns for agents with bodies
+- [The Continuity Problem](https://github.com/leenathomas01/The-Continuity-Problem) - Why state persistence requires governance
+- [Designing for Failure](https://github.com/leenathomas01/designing-for-failure) — Structural primitives for catastrophic recovery
+- [PARP](https://github.com/leenathomas01/Power-Asymmetry-Restraint-Protocol-PARP) — Governance frameworks under opacity
+- [SMA-SIB](https://github.com/leenathomas01/SMA-SIB-Irreversible-Semantic-Memory) — Memory architecture with structural safeguards
+- [Voice Mode Forensics](https://github.com/leenathomas01/voice-mode-forensics) - Prosodic alignment failures
+---
+
 **Status:** Active development. Primitives are stable. Extensions welcome.
 
