@@ -4,6 +4,8 @@ The six primitives in this framework were not invented. They were observed — r
 
 That recurrence is evidence. When the same structural solution appears in domains with no shared history, no shared designers, and no shared substrate, it suggests the solution addresses something fundamental about the problem of maintaining coherence under variable input.
 
+This same regulatory structure must be implemented explicitly in self-modifying systems, which lack the biological and physical constraints that enforce it naturally.
+
 ---
 
 ## The Pattern
