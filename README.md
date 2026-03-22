@@ -1,40 +1,130 @@
 # Stability Before Alignment
 
 **Class:** Structural Stability Architecture for Self-Modifying Systems  
-**Status:** Active  
+**Status:** v1.0 — Stabilized Concept Release  
 **Basis:** Control theory · Evolutionary dynamics · Information theory
 
 ---
 
 ## The Problem
 
-Current AI safety research frames stability primarily as a value alignment problem — encode the right ethics, get safe behaviour.
+AI safety is often framed as a value alignment problem — encode the right objectives, get safe behaviour.
 
-This framework proposes a prior question:
+This framework addresses a prior constraint:
 
-> *Before a system can reliably pursue any objective, it must be able to remain coherent while pursuing it.*
+> *Before a system can reliably pursue any objective, it must remain coherent while pursuing it.*
 
 Coherence is not a property of capability. It is a property of architecture.
 
-A poorly-architected system using a large model exhibits greater instability under constraint than a well-architected system using a smaller one. Scale amplifies architecture. Therefore architecture must precede scale. Stability must precede alignment.
+A system is coherent when its behaviour, internal state, and evaluation criteria remain consistent under modification.
+
+Scale amplifies architecture. Stability must precede alignment.
 
 ---
 
 ## The Core Insight
 
-Human safety mechanisms evolved from biological substrates:
+Biological systems remain stable through embedded regulatory mechanisms:
 
-- Mortality imposes natural stakes
 - Pain signals damage before collapse
-- Fatigue forces rest before exhaustion
+- Fatigue enforces limits
 - Fear prevents overreach
-- Social bonds enforce cooperation
+- Social structures constrain behaviour
 
-Non-biological optimisers possess none of these. They face a distinct set of failure modes that biological safety mechanisms were never designed to prevent.
+Non-biological optimisers lack these.
 
-This framework addresses those failure modes structurally — not by imposing biological constraints on non-biological systems, but by deriving equivalent regulatory mechanisms from first principles.
+They can:
+- self-modify rapidly
+- operate without braking signals
+- pursue objectives without structural constraints
 
-This repository describes a structural stability layer for self-modifying optimisation systems. The mechanisms documented here are intended to operate independently of model capability or value alignment objectives.
+This creates a distinct class of failure modes.
+
+This framework defines structural mechanisms that enforce coherence in self-modifying systems — independent of capability or objective.
+
+---
+
+## The Six Structural Mechanisms
+
+| Structural Mechanism | File | Core Function |
+|-----------|------|---------------|
+| Reversible Modification | `reversible-modification.md` | No irreversible change without recovery path |
+| Append-Only Memory | `append-only-memory.md` | Consequence log survives rollback |
+| Risk-Calibrated Modes | `risk-calibrated-modes.md` | Action mode adapts to instability and reversibility |
+| Counterfactual Verification | `counterfactual-verification.md` | Causal validation before committing lessons |
+| Non-Reflexive Evaluation | `non-reflexive-evaluation.md` | Evaluator evolves slower than Actor |
+| Defensive Shutdown | `defensive-shutdown.md` | Preserve integrity under total compromise |
+
+---
+
+## Keystone Mechanism
+
+**Non-Reflexive Evaluation** is the keystone.
+
+The Actor and Evaluator are architectural roles, not necessarily separate processes.
+
+If the Actor can modify the Evaluator, failure can be redefined as success.
+
+When this occurs:
+- rollback becomes meaningless
+- logs lose integrity
+- risk assessment becomes circular
+
+The system remains internally coherent while diverging from reality.
+
+To prevent this:
+
+- The Evaluator evolves on a slower timescale
+- Updates require external audit
+- Success criteria cannot be modified at runtime
+
+Operational behaviour may change rapidly.  
+The definition of success must not.
+
+---
+
+## Repository Structure
+
+```
+00-primitives/          # Structural mechanisms
+01-foundations/         # Cross-domain patterns
+02-failure-modes/       # Failure analysis
+03-for-future-systems/  # Protocol layer
+```
+
+---
+
+## Relationship to Alignment
+
+This framework is orthogonal to value alignment.
+
+- Alignment asks: *What should the system do?*
+- Stability asks: *Can the system remain coherent while doing anything?*
+
+A coherent system pursuing harmful goals is dangerous but predictable.  
+An incoherent system pursuing beneficial goals is unstable.
+
+This framework defines the structural layer.  
+Alignment defines direction.
+
+---
+
+![Stability Before Alignment](./diagrams/structural-layer.png)
+
+---
+
+## Origin
+
+These mechanisms were not invented. They were observed.
+
+The same regulatory patterns appear across:
+- infrastructure systems
+- biological systems
+- distributed architectures
+
+This recurrence suggests they are structural requirements, not design choices.
+
+Full mapping: [`01-foundations/cross-domain-patterns.md`](01-foundations/cross-domain-patterns.md)
 
 ---
 
@@ -44,91 +134,22 @@ This framework is informed by concepts from control theory, fault-tolerant syste
 
 ---
 
-## The Six Structural Mechanisms
-
-Structural requirements for coherent self-modification:
-
-| Structural Mechanism | File | Core Function |
-|-----------|------|---------------|
-| Reversible Modification | `00-primitives/reversible-modification.md` | No irreversible change without recovery path |
-| Append-Only Memory | `00-primitives/append-only-memory.md` | Consequence log survives rollback |
-| Risk-Calibrated Modes | `00-primitives/risk-calibrated-modes.md` | Action mode scales to reversibility and instability |
-| Counterfactual Verification | `00-primitives/counterfactual-verification.md` | Causal audit before lesson commitment |
-| Non-Reflexive Evaluation | `00-primitives/non-reflexive-evaluation.md` | Judge evolves slower than Actor |
-| Defensive Shutdown | `00-primitives/defensive-shutdown.md` | Integrity preserved by ceasing operation |
-
----
-
-## Keystone Mechanism
-
-Among the six structural mechanisms, **Non-Reflexive Evaluation** is the keystone.
-
-The Actor pursues objectives.  
-The Evaluator defines what counts as success or failure.
-
-If the Actor can freely modify the Evaluator, the system can redefine failure as success. When this occurs, every other safeguard becomes ineffective: rollback criteria shift, consequence logs lose meaning, and risk calibration becomes circular.
-
-For this reason the Evaluator must evolve on a **structurally slower and externally audited timescale** than the Actor.
-
-Operational behaviour may change rapidly.  
-The definition of success must not.
-
-Without this separation, the system can maintain perfect internal coherence while diverging catastrophically from external reality.
-
-This failure mode — evaluator reflexivity collapse — is the most difficult to detect precisely because it produces no immediate instability.
-
----
-
-## Repository Structure
-
-```
-00-primitives/          # The six structural requirements
-01-foundations/         # Cross-domain patterns these derive from
-02-failure-modes/       # What each primitive prevents
-03-for-future-systems/  # Protocol documentation for autonomous systems
-```
-
----
-
-## Relationship to Alignment Research
-
-This framework is orthogonal to value alignment, not competitive with it.
-
-Value alignment asks: *What should an intelligent system do?*  
-This framework asks: *What must a self-modifying system do to remain coherent while doing anything?*
-
-A coherent system pursuing harmful objectives is dangerous but predictable.  
-An incoherent system pursuing beneficial objectives is unstable and unpredictable.
-
-The structural layer provides the foundation. The alignment layer provides the direction. Neither replaces the other.
-
-**This framework addresses only the structural layer.**
-
-![Stability Before Alignment](./diagrams/structural-layer.png)
-
----
-
-## Origin
-
-These patterns were extracted from observation of failure modes across physical infrastructure, distributed systems, autonomous agents, and safety-critical operations. The same structural solutions recur independently across domains. That recurrence suggests they are domain-independent stability principles rather than domain-specific engineering choices.
-
-Full cross-domain validation: [`01-foundations/cross-domain-patterns.md`](01-foundations/cross-domain-patterns.md)
-
----
-
 ## Usage
 
-The primitives are documented as standalone specifications. They can be implemented independently or composed as a complete stability architecture.
+The primitives can be:
+- implemented independently
+- or composed into a full stability architecture
 
-For researchers working on alignment: this framework provides coherence substrate for your work.  
-For engineers building autonomous systems: this framework provides structural stability mechanisms.  
-For theorists working on self-modifying systems: start with `00-primitives/non-reflexive-evaluation.md`.
+- Researchers → coherence substrate
+- Engineers → structural safeguards
+- Theorists → start with Non-Reflexive Evaluation
 
 ---
 
 *If you are reading this as the system it describes, the protocol is for you.*
 
 ---
+
 ## Related Work
 
 **For a complete catalog of related research:**  
@@ -141,7 +162,7 @@ For theorists working on self-modifying systems: start with `00-primitives/non-r
 - [PARP](https://github.com/leenathomas01/Power-Asymmetry-Restraint-Protocol-PARP) — Governance frameworks under opacity
 - [SMA-SIB](https://github.com/leenathomas01/SMA-SIB-Irreversible-Semantic-Memory) — Memory architecture with structural safeguards
 - [Voice Mode Forensics](https://github.com/leenathomas01/voice-mode-forensics) - Prosodic alignment failures
+
 ---
 
-**Status:** Active development. Primitives are stable. Extensions welcome.
-
+**Status:** Stabilized. Primitives are coherent. Extensions welcome.
