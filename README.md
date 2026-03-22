@@ -1,3 +1,6 @@
+**Status:** v1.0 — Stabilized Concept Release
+---
+
 # Stability Before Alignment
 
 **Class:** Structural Stability Architecture for Self-Modifying Systems  
@@ -31,7 +34,7 @@ Biological systems remain stable through embedded regulatory mechanisms:
 - Fear prevents overreach
 - Social structures constrain behaviour
 
-Non-biological optimisers lack these.
+Non-biological optimisers lack these constraints.
 
 They can:
 - self-modify rapidly
@@ -166,3 +169,4 @@ The primitives can be:
 ---
 
 **Status:** Stabilized. Primitives are coherent. Extensions welcome.
+
