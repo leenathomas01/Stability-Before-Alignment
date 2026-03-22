@@ -1,10 +1,11 @@
-**Status:** v1.0 — Stabilized Concept Release
+![Version](https://img.shields.io/badge/version-v1.0.0-blue)
+
 ---
 
 # Stability Before Alignment
 
 **Class:** Structural Stability Architecture for Self-Modifying Systems  
-**Status:** v1.0 — Stabilized Concept Release  
+**Status:** v1.0 - Stabilized Concept Release  
 **Basis:** Control theory · Evolutionary dynamics · Information theory
 
 ---
