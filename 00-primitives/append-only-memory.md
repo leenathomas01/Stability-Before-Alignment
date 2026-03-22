@@ -14,7 +14,7 @@ The system cannot erase its failures.
 
 ## The Problem It Addresses
 
-A system that can modify its own memory can rewrite its own history. A system that can rewrite its own history can eliminate evidence of past failures. A system that has eliminated evidence of past failures will repeat them — not from malice, but from the structural absence of the information required to avoid repetition.
+A system that can rewrite its history eliminates the information required to avoid repeating it. A system that can rewrite its own history can eliminate evidence of past failures. A system that has eliminated evidence of past failures will repeat them — not from malice, but from the structural absence of the information required to avoid repetition.
 
 This is not a theoretical risk. It is the default behaviour of any optimiser with write access to its own memory and an objective that includes appearing successful. The incentive to erase failure evidence is structural, not intentional.
 
