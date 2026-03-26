@@ -60,4 +60,18 @@ The specific mechanisms differ. The underlying regulatory architecture is the sa
 
 ---
 
+## Dynamic Stability
+
+Across domains, stable systems do not only enforce structure, but also constrain the rate at which they change.
+
+These systems implicitly enforce:
+
+- bounded response rates  
+- smooth recovery dynamics  
+- continuity of control  
+
+This is formalized in the Stability Spine (`stability-spine.md`) and extended through higher-order constraints (`jerk-constraint.md`) and perceptual limits (`perceptual-bandwidth-constraint.md`).
+
+---
+
 **Back to:** [`README.md`](../README.md)
