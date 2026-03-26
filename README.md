@@ -1,8 +1,8 @@
+# Stability Before Alignment
+
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue)
 
 ---
-
-# Stability Before Alignment
 
 **Class:** Structural Stability Architecture for Self-Modifying Systems  
 **Status:** v1.0 - Stabilized Concept Release  
@@ -87,13 +87,34 @@ The definition of success must not.
 
 ---
 
+## Structural + Dynamic Stability
+
+The primitives in this repository define **structural coherence** under modification.
+
+This is complemented by a control layer that constrains **how systems change over time** (velocity, acceleration, jerk), and a perceptual constraint that ensures those changes remain **interpretable to observers**.
+
+Together, these define the conditions under which alignment can operate safely.
+
+---
+
+## Documentation Layers
+
+**Control Layer:**
+- [Stability Spine](01-foundations/stability-spine.md)
+- [Jerk Constraint](01-foundations/jerk-constraint.md)
+
+**Perception Layer:**
+- [Perceptual Bandwidth Constraint](01-foundations/perceptual-bandwidth-constraint.md)
+
+---
+
 ## Repository Structure
 
 ```
-00-primitives/          # Structural mechanisms
-01-foundations/         # Cross-domain patterns
-02-failure-modes/       # Failure analysis
-03-for-future-systems/  # Protocol layer
+00-primitives/           # Structural mechanisms
+01-foundations/          # Cross-domain patterns + control + perception
+02-failure-modes/        # Failure analysis
+03-for-future-systems/   # Protocol layer
 ```
 
 ---
@@ -103,17 +124,13 @@ The definition of success must not.
 This framework is orthogonal to value alignment.
 
 - Alignment asks: *What should the system do?*
-- Stability asks: *Can the system remain coherent while doing anything?*
+- Stability asks: *Can the system remain coherent and stable while doing anything?*
 
 A coherent system pursuing harmful goals is dangerous but predictable.  
 An incoherent system pursuing beneficial goals is unstable.
 
-This framework defines the structural layer.  
+This framework defines the structural and dynamic layers.  
 Alignment defines direction.
-
----
-
-![Stability Before Alignment](./diagrams/structural-layer.png)
 
 ---
 
@@ -134,7 +151,7 @@ Full mapping: [`01-foundations/cross-domain-patterns.md`](01-foundations/cross-d
 
 ## Context
 
-This framework is informed by concepts from control theory, fault-tolerant systems design, and AI safety research on objective robustness and corrigibility. It focuses specifically on the architectural stability layer required for coherent self-modifying optimisation systems.
+This framework is informed by concepts from control theory, fault-tolerant systems design, and AI safety research on objective robustness and corrigibility. It focuses on the architectural stability layers required for coherent self-modifying optimisation systems.
 
 ---
 
@@ -144,9 +161,10 @@ The primitives can be:
 - implemented independently
 - or composed into a full stability architecture
 
-- Researchers → coherence substrate
-- Engineers → structural safeguards
-- Theorists → start with Non-Reflexive Evaluation
+**For different audiences:**
+- **Researchers** → coherence substrate
+- **Engineers** → structural safeguards
+- **Theorists** → start with Non-Reflexive Evaluation
 
 ---
 
@@ -160,14 +178,15 @@ The primitives can be:
 📂 [Research Index](https://github.com/leenathomas01/research-index)
 
 **Thematically related:**
-- [Embodied Agent Governance](https://github.com/leenathomas01/embodied-agent-governance) - Governance patterns for agents with bodies
-- [The Continuity Problem](https://github.com/leenathomas01/The-Continuity-Problem) - Why state persistence requires governance
-- [Designing for Failure](https://github.com/leenathomas01/designing-for-failure) — Structural primitives for catastrophic recovery
-- [PARP](https://github.com/leenathomas01/Power-Asymmetry-Restraint-Protocol-PARP) — Governance frameworks under opacity
-- [SMA-SIB](https://github.com/leenathomas01/SMA-SIB-Irreversible-Semantic-Memory) — Memory architecture with structural safeguards
-- [Voice Mode Forensics](https://github.com/leenathomas01/voice-mode-forensics) - Prosodic alignment failures
+- [Embodied Agent Governance](https://github.com/leenathomas01/embodied-agent-governance)
+- [The Continuity Problem](https://github.com/leenathomas01/The-Continuity-Problem)
+- [Designing for Failure](https://github.com/leenathomas01/designing-for-failure)
+- [PARP](https://github.com/leenathomas01/Power-Asymmetry-Restraint-Protocol-PARP)
+- [SMA-SIB](https://github.com/leenathomas01/SMA-SIB-Irreversible-Semantic-Memory)
+- [Voice Mode Forensics](https://github.com/leenathomas01/voice-mode-forensics)
 
 ---
 
-**Status:** Stabilized. Primitives are coherent. Extensions welcome.
+**Status:** Stabilized. Primitives are coherent. Control and perception layers integrated.
 
+---
