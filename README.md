@@ -97,6 +97,10 @@ Together, these define the conditions under which alignment can operate safely.
 
 ---
 
+![Stability Before Alignment](./diagrams/structural-layer.png)
+
+---
+
 ## Documentation Layers
 
 **Control Layer:**
