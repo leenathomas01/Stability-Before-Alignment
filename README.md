@@ -97,7 +97,7 @@ Together, these define the conditions under which alignment can operate safely.
 
 ---
 
-![Stability Before Alignment](./diagrams/structural-layer.png)
+![Stability Before Alignment](https://github.com/leenathomas01/Stability-Before-Alignment/blob/main/diagrams/structural-layer.png)
 
 ---
 
