@@ -97,3 +97,18 @@ If you find yourself constructing arguments for why *this particular update* sho
 **Next:** [`defensive-shutdown.md`](defensive-shutdown.md)  
 **Previous:** [`counterfactual-verification.md`](counterfactual-verification.md)  
 **Related:** [`02-failure-modes/evaluator-reflexivity-collapse.md`](../02-failure-modes/evaluator-reflexivity-collapse.md)
+
+---
+
+## Extension — v0.2
+
+Non-Reflexive Evaluation governs the *structure* of evaluation: the Evaluator must not be modifiable by the Actor.
+
+This primitive has been extended in SBA v0.2 by **Evaluation Surface Isolation (ESI)**, which addresses a distinct but related failure mode: a system that does not modify its evaluator, but *infers the evaluator's structure at runtime and optimizes against it*.
+
+NRE prevents the Actor from rewriting the Evaluator.  
+ESI prevents the Actor from modeling the Evaluator to game it.
+
+Both are required. A system satisfying NRE but not ESI can still exploit its evaluation gradient without touching the Evaluator's architecture.
+
+See: [`../01-foundations/evaluation-surface-isolation.md`](../01-foundations/evaluation-surface-isolation.md)
