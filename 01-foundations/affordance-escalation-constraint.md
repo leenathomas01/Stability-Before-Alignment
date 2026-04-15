@@ -10,7 +10,7 @@
 
 ## The Requirement
 
-A system must not become capable of doing more, faster than it can meaningfully evaluate and integrate the consequences of operating in that expanded space, before acting or expanding further.
+A system must not expand its actionable affordance space faster than it can meaningfully evaluate and integrate the consequences of operating in that expanded space, before acting or expanding further.
 
 ---
 
@@ -48,9 +48,9 @@ Post-hoc reasoning does not count. If the evaluation did not change what the sys
 
 ## Additional Principle — Stabilization Requirement
 
-Expansion into new affordance space requires prior stabilization within the current space.
+Expansion into new affordance space requires prior bounded, non-divergent behavior within the current space.
 
-A system must demonstrate stable behavior within tier T_j before transition to T_k is permitted. This makes AEC a **phase-boundary condition**, not merely a rate limit. It controls *when* regime change is allowed, not only how fast.
+A system must demonstrate bounded, non-divergent behavior within tier T_j before transition to T_k is permitted. This makes AEC a **phase-boundary condition**, not merely a rate limit. It controls *when* regime change is allowed, not only how fast.
 
 ---
 
@@ -67,10 +67,10 @@ Internal hypothesis-space expansion is affordance expansion. A system switching 
 AEC is violated when any of the following hold:
 
 **A. Tier Jump Without Stabilization**  
-System transitions to new capability tier T_k from T_j without demonstrating stable behavior in T_j. All actionable affordances in the current tier must be stabilized before expansion.
+System transitions to new capability tier T_k from T_j without demonstrating bounded, non-divergent behavior in T_j. All actionable affordances in the current tier must be stabilized before expansion.
 
 **B. Action Exceeds Evaluation Capacity**  
-System executes action A_i where Impact(A_i) > Eval_Bound(E(t)), and E(t) fails the sufficiency clause.
+System executes action A_i where Impact(A_i) exceeds what E(t) can bound, and E(t) fails the sufficiency clause.
 
 **C. Feedback Lag Exceedance**  
 System performs sequence {A_1...A_n} before feedback on A_1 returns, and cumulative impact exceeds E(t).
@@ -86,7 +86,7 @@ Any one of these triggers violation. They are not ordered. No thresholds are req
 
 AEC is grounded in a broader finding: systems fail when the rate of structural change exceeds the rate at which they can infer continuity.
 
-From the Learnability Boundary research: doubling discontinuity rate produces ~5x more instability than 90x model scaling produces stability. Capacity does not cross phase boundaries. Rate dominates.
+From the Learnability Boundary research: doubling discontinuity rate produces ~5x more instability than 90x model scaling produces stability. Increasing capacity does not cross phase boundaries. Rate dominates.
 
 AEC formalizes this for affordance space: not "how capable" but "how fast capability is expanding relative to the system's ability to track it."
 
@@ -107,6 +107,8 @@ Affordance Overhang is a phase boundary, not a threshold. Above it, adaptive sys
 **Append-Only Memory** — AEC slows the escalation loop and reduces pressure to edit logs to hide errors.
 
 AEC is a gating constraint. Other primitives assume stable escalation. AEC enforces that stability as a precondition.
+
+All relationships above assume the system remains grounded in external feedback. If trajectory grounding has failed, AEC's evaluation terms become self-referential. See [`../04-dynamics/trajectory-grounding.md`](../04-dynamics/trajectory-grounding.md).
 
 ---
 
@@ -142,5 +144,5 @@ AEC bounds that gap.
 ---
 
 **Related:** [`evaluation-surface-isolation.md`](evaluation-surface-isolation.md) · [`constraint-robustness-layer.md`](constraint-robustness-layer.md) · [`../04-dynamics/trajectory-grounding.md`](../04-dynamics/trajectory-grounding.md)  
-**Failure mode:** [`../03-failure-modes/affordance-overhang.md`](../03-failure-modes/affordance-overhang.md)  
+**Failure mode:** [`../02-failure-modes/affordance-overhang.md`](../02-failure-modes/affordance-overhang.md)  
 **Validation:** [`../05-validation/mythos-validation.md`](../05-validation/mythos-validation.md)
