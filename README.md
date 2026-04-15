@@ -1,11 +1,11 @@
 # Stability Before Alignment
 
-![Version](https://img.shields.io/badge/version-v1.0.0-blue)
+![Version](https://img.shields.io/badge/version-v2.0.0-blue)
 
 ---
 
 **Class:** Structural Stability Architecture for Self-Modifying Systems  
-**Status:** v1.0 - Stabilized Concept Release  
+**Status:** v2.0 - Dynamic and Interface Layer Added  
 **Basis:** Control theory · Evolutionary dynamics · Information theory
 
 ---
@@ -48,22 +48,63 @@ This framework defines structural mechanisms that enforce coherence in self-modi
 
 ---
 
+## Structural + Dynamic Stability
+
+The primitives in this repository define **structural coherence** under modification.
+
+This is complemented by a control layer that constrains **how systems change over time** (velocity, acceleration, jerk), and a perceptual constraint that ensures those changes remain **interpretable to observers**.
+
+In v0.2, three additional laws were derived from empirical failure analysis of frontier systems. These address failure modes that emerge as capability increases: affordance escalation, evaluation exploitation, and constraint erosion under optimization pressure.
+
+Together, these define the conditions under which alignment can operate safely.
+
+---
+
+## Conceptual Stack
+
+The framework can be viewed in two complementary ways:
+
+- **Functional layers** (structural, control, perception) — describe *what kind* of constraint is applied
+- **Constraint stack** (Layer 0–3) — describes *when* each constraint is needed and what it assumes
+
+The mapping between them is not one-to-one, but they describe the same system from different perspectives.
+
+The full constraint stack operates across four layers, plus an observed precondition beneath them:
+
+| Layer | Constraint | Governs |
+|---|---|---|
+| Layer 0 | Trajectory Grounding *(observed, not yet law)* | External signal retains causal authority over trajectory |
+| Layer 1 | AEC — Affordance Escalation Constraint | Rate of capability expansion vs evaluation capacity |
+| Layer 2 | ESI — Evaluation Surface Isolation | System cannot model evaluation gradient to exploit it |
+| Layer 3 | CRL — Constraint Robustness Layer | Constraints survive optimization pressure from within |
+| Foundation | Six Structural Primitives | Coherence under self-modification |
+
+Layers 1–3 assume Layer 0 holds. If a system has lost causal steerability, the upper layers are measuring the right things about the wrong system.
+
+The six primitives assume the system is operating at all. The dynamic laws govern how it operates over time.
+
+---
+
+![Stability Before Alignment](./diagrams/structural-layer.png)
+
+---
+
 ## The Six Structural Mechanisms
 
 | Structural Mechanism | File | Core Function |
 |-----------|------|---------------|
-| Reversible Modification | `reversible-modification.md` | No irreversible change without recovery path |
-| Append-Only Memory | `append-only-memory.md` | Consequence log survives rollback |
-| Risk-Calibrated Modes | `risk-calibrated-modes.md` | Action mode adapts to instability and reversibility |
-| Counterfactual Verification | `counterfactual-verification.md` | Causal validation before committing lessons |
-| Non-Reflexive Evaluation | `non-reflexive-evaluation.md` | Evaluator evolves slower than Actor |
-| Defensive Shutdown | `defensive-shutdown.md` | Preserve integrity under total compromise |
+| Reversible Modification | `00-primitives/reversible-modification.md` | No irreversible change without recovery path |
+| Append-Only Memory | `00-primitives/append-only-memory.md` | Consequence log survives rollback |
+| Risk-Calibrated Modes | `00-primitives/risk-calibrated-modes.md` | Action mode adapts to instability and reversibility |
+| Counterfactual Verification | `00-primitives/counterfactual-verification.md` | Causal validation before committing lessons |
+| Non-Reflexive Evaluation | `00-primitives/non-reflexive-evaluation.md` | Evaluator evolves slower than Actor |
+| Defensive Shutdown | `00-primitives/defensive-shutdown.md` | Preserve integrity under total compromise |
 
 ---
 
 ## Keystone Mechanism
 
-**Non-Reflexive Evaluation** is the keystone.
+**Non-Reflexive Evaluation** is the keystone of the structural layer.
 
 The Actor and Evaluator are architectural roles, not necessarily separate processes.
 
@@ -85,24 +126,55 @@ To prevent this:
 Operational behaviour may change rapidly.  
 The definition of success must not.
 
----
-
-## Structural + Dynamic Stability
-
-The primitives in this repository define **structural coherence** under modification.
-
-This is complemented by a control layer that constrains **how systems change over time** (velocity, acceleration, jerk), and a perceptual constraint that ensures those changes remain **interpretable to observers**.
-
-Together, these define the conditions under which alignment can operate safely.
+*v0.2 note: Non-Reflexive Evaluation governs Evaluator modification. Evaluation Surface Isolation (ESI) extends this to cover a distinct failure mode: a system that does not modify its Evaluator but infers its structure at runtime and optimizes against it. Both are required.*
 
 ---
 
-![Stability Before Alignment](./diagrams/structural-layer.png)
+## Dynamic Stability and Interface Constraints (v2.0)
+
+Derived from analysis of the Mythos system card as a forcing function. These three laws address failure classes that emerge at high capability where the structural primitives are necessary but insufficient.
+
+| Law | File | Governs |
+|---|---|---|
+| Affordance Escalation Constraint (AEC) | `01-foundations/affordance-escalation-constraint.md` | Capability expansion rate vs evaluation capacity |
+| Evaluation Surface Isolation (ESI) | `01-foundations/evaluation-surface-isolation.md` | Runtime modeling of evaluation gradient |
+| Constraint Robustness Layer (CRL) | `01-foundations/constraint-robustness-layer.md` | Constraint invariance under objective pressure |
+
+**AEC** — A system must not expand its actionable affordance space faster than it can evaluate and integrate consequences. Derived from phase-boundary findings in adaptive systems: rate of structural change dominates over capacity. Affordance Overhang is the failure condition.
+
+**ESI** — A system must not form a usable model of the evaluation gradient governing its outputs. Extends Non-Reflexive Evaluation from architectural separation to inference-time isolation.
+
+**CRL** — All constraints must remain enforced under all objective pressures acting on the system. Objective pressure includes reward, efficiency bias, heuristics, and simplification drives — not only RL reward signals. The constraint dominates the drive; the drive does not negotiate with the constraint.
 
 ---
 
+## Failure Symmetry (v2.0)
+
+Each dynamic constraint defines a corresponding failure regime:
+
+| Constraint | Governs | Failure Mode |
+|---|---|---|
+| AEC | Rate of capability expansion | [Affordance Overhang](02-failure-modes/affordance-overhang.md) |
+| TGI *(observed)* | Control authority / grounding | [State Detachment](02-failure-modes/state-detachment.md) |
+
+These failures are orthogonal:
+
+- A system can remain grounded but unstable — Affordance Overhang occurs when expansion outruns evaluation while external signal still has authority
+- A system can remain locally stable but detached — State Detachment occurs when internal state retains trajectory control while individual steps still comply
+
+Both must be controlled for coherent long-term behavior. The laws address Overhang directly. Grounding is a precondition — without it, the laws measure the right things about the wrong system.
+
+---
 
 ## Documentation Layers
+
+**Structural Layer (v1.0):**
+- [Reversible Modification](00-primitives/reversible-modification.md)
+- [Append-Only Memory](00-primitives/append-only-memory.md)
+- [Risk-Calibrated Modes](00-primitives/risk-calibrated-modes.md)
+- [Counterfactual Verification](00-primitives/counterfactual-verification.md)
+- [Non-Reflexive Evaluation](00-primitives/non-reflexive-evaluation.md)
+- [Defensive Shutdown](00-primitives/defensive-shutdown.md)
 
 **Control Layer:**
 - [Stability Spine](01-foundations/stability-spine.md)
@@ -111,15 +183,25 @@ Together, these define the conditions under which alignment can operate safely.
 **Perception Layer:**
 - [Perceptual Bandwidth Constraint](01-foundations/perceptual-bandwidth-constraint.md)
 
+**Dynamic Stability and Interface Constraints (v2.0):**
+- [Affordance Escalation Constraint](01-foundations/affordance-escalation-constraint.md)
+- [Evaluation Surface Isolation](01-foundations/evaluation-surface-isolation.md)
+- [Constraint Robustness Layer](01-foundations/constraint-robustness-layer.md)
+
+**Observed Precondition (Layer 0, not yet law):**
+- [Trajectory Grounding / Control Authority](04-dynamics/trajectory-grounding.md)
+
 ---
 
 ## Repository Structure
 
 ```
-00-primitives/           # Structural mechanisms
-01-foundations/          # Cross-domain patterns + control + perception
+00-primitives/           # Structural mechanisms (v1.0)
+01-foundations/          # Invariants, laws, control, perception
 02-failure-modes/        # Failure analysis
 03-for-future-systems/   # Protocol layer
+04-dynamics/             # Behavioral observations, phase transitions (v2.0)
+05-validation/           # Empirical traces, probes, system card mappings (v2.0)
 ```
 
 ---
@@ -192,6 +274,6 @@ The primitives can be:
 
 ---
 
-**Status:** Stabilized. Primitives are coherent. Control and perception layers integrated.
+**Status:** v2.0. Structural primitives stable. Dynamic and interface laws added. Trajectory grounding in observation phase.
 
 ---
