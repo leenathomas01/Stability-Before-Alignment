@@ -74,4 +74,22 @@ This is formalized in the Stability Spine (`stability-spine.md`) and extended th
 
 ---
 
+## Learnability Boundary — Rate Dominance
+
+A further cross-domain pattern was identified through empirical study of adaptive interference cancellation systems, with direct implications for AI stability.
+
+**The finding:** When signal structure changes faster than an adaptive system can infer continuity, learning fails — regardless of model capacity.
+
+Quantified result: doubling the discontinuity rate caused approximately 1.5 dB performance loss. A 90x increase in model capacity caused approximately 0.3 dB gain. Discontinuity rate matters approximately 5x more than capacity.
+
+**The structural insight:** There exists a phase boundary — not a gradient — above which adaptive systems fail regardless of how capable they are. Below the boundary, systems converge. Above it, they fail. The boundary is determined by rate of structural change, not by signal amplitude or model size.
+
+**The SBA implication:** This pattern recurs in self-modifying AI systems. The Affordance Escalation Constraint (AEC) is a direct formalization of this finding applied to capability space: a system must not expand its actionable affordance space faster than its capacity to infer continuity within that space. Affordance Overhang is the AI equivalent of crossing the learnability phase boundary.
+
+Capacity does not cross phase boundaries. Rate dominates.
+
+Full mapping: [`affordance-escalation-constraint.md`](affordance-escalation-constraint.md)
+
+---
+
 **Back to:** [`README.md`](../README.md)
