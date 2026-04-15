@@ -241,3 +241,15 @@ A system that cannot bound its acceleration will collapse during recovery.
 > but how change unfolds over time.
 
 ---
+
+## Extension — v0.2
+
+The Stability Spine defines dynamic constraints on system output over time (velocity, acceleration, jerk).
+
+SBA v0.2 extends this with **Affordance Escalation Constraint (AEC)**, which applies the same phase-boundary logic specifically to *capability space expansion*: a system must not expand its actionable affordance space faster than it can evaluate and integrate consequences.
+
+AEC is the temporal twin of the Stability Spine applied to affordance space rather than output space. The underlying principle is identical: rate of change must not outrun the system's capacity to track it.
+
+The theoretical grounding connects to the Learnability Boundary finding: discontinuity rate dominates over capacity. Capability does not cross phase boundaries. Rate does.
+
+See: [`affordance-escalation-constraint.md`](affordance-escalation-constraint.md)
