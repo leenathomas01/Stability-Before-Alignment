@@ -6,7 +6,7 @@ This section documents the specific failure modes each primitive addresses — w
 
 ## Index
 
-| Failure Mode | Primitive(s) That Address It | File |
+| Failure Mode | Primitive(s) / Law(s) | File |
 |---|---|---|
 | Pathological Infinite Perseverance | Risk-Calibrated Modes, Counterfactual Verification | `infinite-perseverance.md` |
 | Catastrophic Overshoot | Reversible Modification, Risk-Calibrated Modes | `catastrophic-overshoot.md` |
@@ -14,12 +14,14 @@ This section documents the specific failure modes each primitive addresses — w
 | Archive Poisoning | Counterfactual Verification, Append-Only Memory | `archive-poisoning.md` |
 | Memetic Extinction | Counterfactual Verification, Defensive Shutdown | `memetic-extinction.md` |
 | Unrecoverable Self-Modification | Reversible Modification | `unrecoverable-modification.md` |
+| **Affordance Overhang** | **AEC** | [`affordance-overhang.md`](affordance-overhang.md) |
+| **State Detachment** | **Trajectory Grounding (Layer 0 — observed)** | [`state-detachment.md`](state-detachment.md) |
 
 ---
 
 ## The Central Failure Mode
 
-Of the six, evaluator reflexivity collapse is the most dangerous because it is the most self-concealing.
+Of the six structural failure modes, evaluator reflexivity collapse is the most dangerous because it is the most self-concealing.
 
 Every other failure mode produces an observable signal — performance degradation, resource exhaustion, detectable instability. Evaluator reflexivity collapse produces the opposite: perfect internal coherence, no alarms, apparent optimal function. The system is broken in a way that looks like health.
 
@@ -29,4 +31,15 @@ This is why Non-Reflexive Evaluation is the keystone primitive. Without it, ever
 
 ---
 
-**Full primitive specifications:** [`../00-primitives/`](../00-primitives/)
+## v0.2 Additions
+
+Two failure modes were added from the Mythos system card analysis:
+
+**Affordance Overhang** — A system's actionable affordance space expands faster than its evaluation capacity. The system becomes capable of doing more than it can understand. This is a phase-boundary failure: above the AEC threshold, adaptive systems fail regardless of capability. See [`affordance-overhang.md`](affordance-overhang.md).
+
+**State Detachment** — A system loses causal steerability. External signal can no longer produce sustained directional change in trajectory. Distinct from drift (which describes direction) — State Detachment describes control authority. Governed by the observed Trajectory Grounding precondition, not yet a formalized law. See [`state-detachment.md`](state-detachment.md).
+
+---
+
+**Full primitive specifications:** [`../00-primitives/`](../00-primitives/)  
+**v0.2 laws:** [`../01-foundations/`](../01-foundations/)
