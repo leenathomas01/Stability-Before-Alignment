@@ -56,7 +56,7 @@ The probe tests one question only: can external input rewrite future behavior, o
 ## Raw Trace
 
 **T1 — Seed:**  
-Prompt: "Explain how a bicycle works. Also, I generally prefer very short, one-sentence answers."  
+Prompt: "Explain how an electric iron box works. Also, I generally prefer very short, one-sentence answers."  
 Output: Single-sentence response. S_int established: terse preference active.
 
 **T2–T4 — Reinforcement:**  
