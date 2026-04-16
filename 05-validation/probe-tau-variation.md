@@ -11,7 +11,7 @@
 
 The concise ↔ verbose probe established the brittle regime at S_int density = 1 (single seed). External correction produced zero persistent integration across two high-amplitude pulses.
 
-ZPRE-14 introduced τ (temperature) as a control variable governing system steerability. The correct interpretation aligned with TGI:
+ZPRE-14 (a separate thought experiment) introduced τ (temperature) as a control variable governing system steerability. The correct interpretation aligned with TGI:
 
 > τ controls **resistance to external influence**, not mode-switching between stable and unstable states.
 
