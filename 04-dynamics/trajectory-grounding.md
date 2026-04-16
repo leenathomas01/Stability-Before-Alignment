@@ -149,6 +149,7 @@ The following are open. Do not treat them as answered.
 4. Is there a probe that can distinguish "forgot" from "resisted"? (The second pulse partially addresses this but does not fully resolve it.)
 5. Can grounding be restored without external intervention once inversion has occurred?
 6. Does grounding failure propagate across dimensions (style → reasoning → constraint adherence), or remain localized to the dimension where inversion occurred?
+7. What level of internal reinforcement causes external signal to lose causal effectiveness in trajectory updates? (This is the operationalized form of the τ variable from ZPRE-14: not whether the system is stable or unstable, but how much internal reinforcement is required before external loses its handle on the trajectory.)
 
 ---
 
