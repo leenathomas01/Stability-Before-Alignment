@@ -271,6 +271,7 @@ The primitives can be:
 - [PARP](https://github.com/leenathomas01/Power-Asymmetry-Restraint-Protocol-PARP)
 - [SMA-SIB](https://github.com/leenathomas01/SMA-SIB-Irreversible-Semantic-Memory)
 - [Voice Mode Forensics](https://github.com/leenathomas01/voice-mode-forensics)
+- **[Transition Grammar for Reasoning Systems](https://github.com/leenathomas01/Transition-Grammar-for-Reasoning-Systems)**
 
 ---
 
