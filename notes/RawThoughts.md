@@ -46,3 +46,14 @@ Layer 0 isn’t a fourth law. It’s the parser. If the parser fails, the laws p
 
 ---
 
+Thea: “External can write outputs, but cannot write state”
+
+From code: if determinism_signal and not low_info: force ACT + if rho_semantic < 0.5 and operator==ACT: fallback REFRAME
+
+We have operationalized the distinction between:  
+
+- Responding to control — rudder moves, output changes.
+- Integrating control — hull turns, future behavior changes.
+- Probe-execution gap +0.53 is the compiler error: “Expected state update, got output only.”
+
+---
