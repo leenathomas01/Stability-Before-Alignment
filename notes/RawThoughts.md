@@ -26,6 +26,7 @@ Let me try to map it
 
 ### Future directions?
 
+```
 Repo: stability-before-alignment/
 ├── sba_v0.2_core.md          ← AEC / ESI / CRL (local correctness)
 ├── transition_grammar/       ← Layer 0 (global controllability)
@@ -34,6 +35,7 @@ Repo: stability-before-alignment/
 │   └── traces/               ← Elastic/Plastic/Brittle examples
 └── experiments/
     └── probe_2A_no_seed/     ← Testing integration boundary
+```
     
     
 **SBA v0.2:** Assumes transitions are well-formed. Defines what “good” looks like within a turn.
