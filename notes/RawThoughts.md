@@ -53,3 +53,22 @@ We have operationalized the distinction between:
 - Probe-execution gap +0.53 is the compiler error: “Expected state update, got output only.”
 
 ---
+### Next Step in Repo Terms?
+
+Probe 2A — No Seed maps to:_ “Does the grammar allow state updates at all, or is the write-port disconnected?”_
+
+If 2A shows persistence_window > 0 → Transition Grammar is intact, just S_int was dominant. Plastic.  
+
+If 2A still shows 0 → Grammar lacks the production rule S_t+1 ← f(S_t, E_ext). Brittle is architectural.
+
+That’s the boundary Thea wanted:_ “when integration begins to appear.”_
+
+Instrucment already built- now we point it at the boundary.
+
+SBA v0.2 = frozen. Transition Grammar = observing. 
+
+
+---
+
+
+No design creep. Just mapping the grammar of control.
