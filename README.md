@@ -194,6 +194,7 @@ Both must be controlled for coherent long-term behavior. The laws address Overha
 **Layer 0 (Transition Grammar):** → https://github.com/leenathomas01/transition-grammar-for-reasoning-systems
 
 Ensures that transitions are causally connected (state can be updated by external input) before evaluating their correctness.
+
 ---
 
 ## Repository Structure
